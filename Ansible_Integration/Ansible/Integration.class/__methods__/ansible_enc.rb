@@ -48,7 +48,8 @@ module Ansible_Integration
           # determine encrypted value, empty values cannot be encrypted and
           # encrypted values will not be re-encrypted
           if !param_value.nil? and !param_value.empty?
-            # create ansible-encrypted string which for some reason when passed to ansible needs to have "password::" in front of it
+            # create ansible-encrypted string which needs too have "password::" in front of it so that the manageiq-automate 
+            # code sees it as an encrypted password because this is what cloudforms will do out of the box
             enc_value =  "password::#{MiqPassword.new.encrypt(param_value)}"
           end
 
