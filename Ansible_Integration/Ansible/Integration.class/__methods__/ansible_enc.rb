@@ -25,7 +25,6 @@ module Ansible_Integration
       end
 
       def main
-        #Investigative_Debugging::Discovery::ObjectWalker.walk_objects
         enc_prefix = get_key('enc_prefix')
                 
         # extract requested encrypted variables
